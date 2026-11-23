@@ -2,7 +2,7 @@
 
 [🌐 多语言下载页 / Multilingual downloads / ダウンロード / 다운로드](https://zuoqin123222.github.io/GetAmped-Mobile/)
 
-[Download latest Android APK · v0.37](https://47.117.73.22/android/releases/OriginalTraining-v0.37.apk) · Android 8.0+
+[Download latest Android APK · v0.38](https://github.com/zuoqin123222/GetAmped-Mobile/releases/download/v0.38/GetAmped-Mobile-Android-v0.38.apk) · Android 8.0+
 
 **Android: available · iOS: not yet available**
 
@@ -62,10 +62,10 @@ Only the current Android version is listed for download. Some mouse-dependent eq
 
 마우스 입력이 필요한 일부 장비는 터치 호환성 검증이 필요하며 모든 기술의 Android 검증 완료를 의미하지 않습니다.
 
-## v0.37
+## v0.38
 
-名称统一为 GetAmped Mobile，下载页默认英文并只保留最新版；反馈正文限制为 10–800 字，全站滚动 24 小时最多接收 10 条，网页与 App 共用额度；说明 Android 版现已提供、iOS 版暂无；龙魂图标四周增加同色灰色背景，保留原像素并适配圆形和圆角图标。
+小增量显示排队中几/几，轮到后自动下载，可取消；完整包或预计超过五分钟的更新转至 GitHub；每次发布自动核验 GitHub 完整 APK 并清理旧公开下载链接；保留签名、设置、断点续传与完整包核验。
 
 APK: 919,020,734 bytes
 
-SHA-256: `f0d84719154c93fffa5368d6f9b116a25a3a966dcaa1445cbcf63e72832124d5`
+SHA-256: `51683c46553d8ed3a677a22a1afab6a33311d81da9ef1f88b3da265eeeacd427`

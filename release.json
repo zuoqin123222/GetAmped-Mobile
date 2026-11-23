@@ -1,8 +1,8 @@
 {
-  "versionName": "0.37",
-  "versionCode": 41,
+  "versionName": "0.38",
+  "versionCode": 42,
   "bytes": 919020734,
-  "sha256": "f0d84719154c93fffa5368d6f9b116a25a3a966dcaa1445cbcf63e72832124d5",
-  "url": "https://47.117.73.22/android/releases/OriginalTraining-v0.37.apk",
-  "changes": "名称统一为 GetAmped Mobile，下载页默认英文并只保留最新版；反馈正文限制为 10–800 字，全站滚动 24 小时最多接收 10 条，网页与 App 共用额度；说明 Android 版现已提供、iOS 版暂无；龙魂图标四周增加同色灰色背景，保留原像素并适配圆形和圆角图标。"
+  "sha256": "51683c46553d8ed3a677a22a1afab6a33311d81da9ef1f88b3da265eeeacd427",
+  "url": "https://github.com/zuoqin123222/GetAmped-Mobile/releases/download/v0.38/GetAmped-Mobile-Android-v0.38.apk",
+  "changes": "小增量显示排队中几/几，轮到后自动下载，可取消；完整包或预计超过五分钟的更新转至 GitHub；每次发布自动核验 GitHub 完整 APK 并清理旧公开下载链接；保留签名、设置、断点续传与完整包核验。"
 }

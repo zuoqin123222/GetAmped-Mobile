@@ -86,6 +86,18 @@ loading:"버전 정보를 불러오는 중…",releaseError:"버전 정보를 �
 sending:"전송 중…",success:"전송 완료. 접수 번호: ",network:"전송을 확인하지 못했습니다. 초안이 저장되어 있으니 다시 시도하세요.",rate:"{seconds}초 후 다시 시도하세요.",invalid:"글자 수와 제어 문자를 확인하세요.",unavailable:"제보 서비스를 이용할 수 없습니다. 초안이 저장되어 있으니 나중에 다시 시도하세요.",
 notes:["이름을 GetAmped Mobile로 변경했습니다. 최신 버전만 표시하고 기본 언어는 영어입니다.","본문 최대 800자, 웹과 앱을 합쳐 사이트 전체 24시간 최대 10건으로 제한합니다.","Android 버전은 제공 중이며 iOS 버전은 아직 없습니다.","용혼 원본 픽셀을 유지하고 둥근 아이콘에 맞게 같은 회색 여백을 넓혔습니다."]}
 };
+const updateNotes38={
+ en:["Small delta downloads now show your queue position and start automatically when it is your turn.","Full APKs and updates estimated to take over five minutes open the GitHub download page.","Each release uploads and verifies its full APK on GitHub; only the latest public download remains.","The original signature, settings, resume support and full APK verification are retained."],
+ "zh-CN":["小增量显示排队位置，轮到后自动下载，可取消排队。","完整包或预计下载超过五分钟时，提示前往 GitHub 下载。","每次发布核验 GitHub 完整 APK，网页和 GitHub 只保留最新公开下载。","保留原签名、个人设置、断点续传与完整包核验。"],
+ "zh-TW":["小增量顯示排隊位置，輪到後自動下載，可取消排隊。","完整包或預計下載超過五分鐘時，提示前往 GitHub 下載。","每次發布驗證 GitHub 完整 APK，網頁和 GitHub 只保留最新公開下載。","保留原簽章、個人設定、續傳與完整包驗證。"],
+ ja:["小さな差分のダウンロードは待ち順を表示し、順番が来ると自動的に開始します。","完全 APK または推定 5 分を超える更新は GitHub のダウンロードページを開きます。","毎回 GitHub 上の完全 APK を検証し、最新の公開ダウンロードのみ残します。","署名、個人設定、ダウンロード再開と完全 APK の検証を維持します。"],
+ ko:["작은 차분 다운로드는 대기 순서를 표시하고 차례가 되면 자동으로 시작합니다.","전체 APK 또는 예상 다운로드가 5분을 넘는 업데이트는 GitHub 다운로드 페이지를 엽니다.","매번 GitHub의 전체 APK를 검증하고 최신 공개 다운로드만 유지합니다.","원래 서명, 개인 설정, 이어받기와 전체 APK 검증을 유지합니다."]
+};
+words.en.updatesText="Startup checks for updates. Small exact deltas show a queue position and rebuild the verified APK. Full APKs or downloads estimated over five minutes use GitHub.";
+words["zh-CN"].updatesText="启动时检查更新。小增量显示排队位置并重建核验完整 APK；完整包或预计超过五分钟的下载使用 GitHub。";
+words["zh-TW"].updatesText="啟動時檢查更新。小增量顯示排隊位置並重建驗證完整 APK；完整包或預計超過五分鐘的下載使用 GitHub。";
+words.ja.updatesText="起動時に更新を確認します。小さな差分は待ち順を表示し、完全 APK を再構築・検証します。完全 APK と推定 5 分を超えるダウンロードは GitHub を使用します。";
+words.ko.updatesText="실행 시 업데이트를 확인합니다. 작은 차분은 대기 순서를 표시하고 전체 APK를 재구성·검증합니다. 전체 APK와 예상 5분을 넘는 다운로드는 GitHub를 사용합니다.";
 const $=id=>document.getElementById(id);
 function read(key,fallback){try{return JSON.parse(localStorage.getItem(key))??fallback}catch{return fallback}}
 function save(key,value){try{localStorage.setItem(key,JSON.stringify(value))}catch{}}
@@ -103,7 +115,7 @@ function renderRelease(){
  $("download").href=release.url;$("hash").textContent=release.sha256;
  $("releaseLink").href=`https://github.com/zuoqin123222/GetAmped-Mobile/releases/tag/v${release.versionName}`;
  $("changes").replaceChildren();
- const notes=release.translations?.[language]||((release.versionName==="0.37")?t("notes"):release.changes.split("\n").filter(Boolean));
+ const notes=release.translations?.[language]||((release.versionName==="0.38")?updateNotes38[language]:((release.versionName==="0.37")?t("notes"):release.changes.split("\n").filter(Boolean)));
  for(const note of notes){const li=document.createElement("li");li.textContent=note;$("changes").append(li)}
 }
 function setLanguage(value,persist=false){language=value;if(persist)save("ga-language-choice",language);document.documentElement.lang=language;$("language").value=language;
