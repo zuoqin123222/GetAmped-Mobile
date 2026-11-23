@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="GetAmped Mobile Android Test: jobs and equipment, offline practice, online test rooms, in-app updates and feedback.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://47.117.73.22; script-src 'self'; style-src 'self'; img-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>GetAmped Mobile Android Test</title>
+<link rel="stylesheet" href="./site.css">
+<script src="./site.js" defer></script>
+</head>
+<body>
+<header class="header wrap"><a class="brand" href="#top">GA<span> / MOBILE TEST</span></a>
+<div class="nav"><a href="#feedback" data-i18n="feedback">Feedback</a><label class="sr-only" for="language">Language</label>
+<select id="language" aria-label="Language"><option value="zh-CN">简体中文</option><option value="zh-TW">繁體中文</option><option value="en">English</option><option value="ja">日本語</option><option value="ko">한국어</option></select></div></header>
+<main id="top" class="wrap">
+<section class="hero">
+<div class="eyebrow"><i></i><span data-i18n="test">ANDROID · DEVELOPMENT TEST</span></div>
+<h1>GetAmped Mobile<br>Android Test<span class="period">.</span></h1>
+<p class="intro" data-i18n="intro">Explore jobs and equipment, practice offline, and play in online test rooms on Android.</p>
+<div class="hero-actions"><a id="download" class="button primary" href="#" data-i18n="download">Download APK</a><a class="button secondary" href="#feedback" data-i18n="feedback">Feedback</a></div>
+<p class="small" id="releaseLine" aria-live="polite"></p>
+</section>
+<section class="features" aria-label="Features">
+<article><span class="number">01</span><h2 data-i18n="jobs">Jobs & equipment</h2><p data-i18n="jobsText">Choose from all jobs, main equipment and sub equipment included in the test client. Follow the original job compatibility rules.</p></article>
+<article><span class="number">02</span><h2 data-i18n="offline">Local single-player</h2><p data-i18n="offlineText">Practice and try equipment locally. Offline practice does not require the online server.</p></article>
+<article><span class="number">03</span><h2 data-i18n="online">Online test rooms</h2><p data-i18n="onlineText">Create or join rooms for online play, or practice alone on the server.</p></article>
+<article><span class="number">04</span><h2 data-i18n="updates">In-app updates</h2><p data-i18n="updatesText">The app checks for updates at startup. Supported versions download an exact delta and rebuild the verified full APK before Android confirms installation.</p></article>
+</section>
+<section class="server-note"><div class="server-icon" aria-hidden="true">SH</div><div><h2 data-i18n="server">One small test server in Shanghai</h2><p data-i18n="serverText">Currently there is just one small, personally funded development server in Shanghai. Capacity is limited; latency and availability can vary during testing.</p><p class="small" data-i18n="compatibility">This is a development test. Some equipment that depends on mouse input still needs touch compatibility testing. Selecting equipment does not mean every skill has been verified on Android.</p></div></section>
+<section class="release-section">
+<div class="section-heading"><span class="eyebrow" data-i18n="current">CURRENT BUILD</span><h2 id="releaseTitle"></h2></div>
+<div class="release-grid"><div><h3 data-i18n="changes">Release notes</h3><ul id="changes"></ul><p id="changesPending" class="small"></p></div>
+<div class="identity"><h3 data-i18n="install">Install & verify</h3><p data-i18n="installText">Android 8.0 or newer. For a first installation, download the full APK and allow installation from your browser. Updates keep the same signature and personal settings.</p><div class="hash-label">SHA-256</div><code id="hash"></code><p class="small" data-i18n="oldVersions">Older clients without an updater need the full APK.</p><a id="releaseLink" class="text-link" href="https://github.com/zuoqin123222/GetAmped-Android-Downloads/releases" data-i18n="history">Version history ↗</a></div></div>
+</section>
+<section id="feedback" class="feedback-section">
+<div><span class="eyebrow" data-i18n="help">HELP IMPROVE THE TEST</span><h2 data-i18n="feedback">Feedback</h2><p data-i18n="feedbackText">Tell us what happened, how to reproduce it, and what you expected. Suggestions are welcome too.</p><p class="small" data-i18n="privacy">Only the entered content, category, language, app version and platform are sent. Contact information is optional. Feedback is visible only to the developer; your draft stays in this browser until submitted.</p><p class="small" data-i18n="limits">10–2000 characters. Contact: up to 120. At least 60 seconds between submissions, up to 5 per network address per hour.</p></div>
+<form id="feedbackForm" novalidate>
+<label for="category" data-i18n="category">Category</label><select id="category"><option value="bug" data-i18n="bug">Problem / bug</option><option value="suggestion" data-i18n="suggestion">Suggestion</option><option value="compatibility" data-i18n="device">Device / control compatibility</option><option value="other" data-i18n="other">Other</option></select>
+<label for="message" data-i18n="content">Feedback content</label><textarea id="message" rows="6" required aria-describedby="counter"></textarea><div id="counter" class="counter">0 / 2000</div>
+<label for="contact" data-i18n="contact">Contact (optional)</label><input id="contact" type="text" autocomplete="off">
+<div class="trap" aria-hidden="true"><label for="website">Website</label><input id="website" tabindex="-1" autocomplete="off"></div>
+<button id="submit" class="button primary" type="submit" data-i18n="submit">Submit feedback</button><p id="feedbackStatus" role="status" aria-live="polite"></p>
+</form>
+</section>
+</main>
+<footer class="wrap"><span>GetAmped Mobile Android Test</span><a href="https://github.com/zuoqin123222/GetAmped-Android-Downloads" data-i18n="repository">GitHub downloads ↗</a></footer>
+</body>
+</html>

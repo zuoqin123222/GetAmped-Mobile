@@ -1,0 +1,149 @@
+"use strict";
+const words={
+en:{
+test:"ANDROID · DEVELOPMENT TEST",intro:"Explore jobs and equipment, practice offline, and play in online test rooms on Android.",
+download:"Download APK",feedback:"Feedback",jobs:"Jobs & equipment",jobsText:"Choose from all jobs, main equipment and sub equipment included in the test client. Follow the original job compatibility rules.",
+offline:"Local single-player",offlineText:"Practice and try equipment locally. Offline practice does not require the online server.",
+online:"Online test rooms",onlineText:"Create or join rooms for online play, or practice alone on the server.",
+updates:"In-app updates",updatesText:"The app checks for updates at startup. Supported versions download an exact delta and rebuild the verified full APK before Android confirms installation.",
+server:"One small test server in Shanghai",serverText:"Currently there is just one small, personally funded development server in Shanghai. Capacity is limited; latency and availability can vary during testing.",
+compatibility:"This is a development test. Some equipment that depends on mouse input still needs touch compatibility testing. Selecting equipment does not mean every skill has been verified on Android.",
+current:"CURRENT BUILD",changes:"Release notes",install:"Install & verify",installText:"Android 8.0 or newer. For a first installation, download the full APK and allow installation from your browser. Updates keep the same signature and personal settings.",
+oldVersions:"Older clients without an updater need the full APK.",history:"Version history ↗",help:"HELP IMPROVE THE TEST",
+feedbackText:"Tell us what happened, how to reproduce it, and what you expected. Suggestions are welcome too.",
+privacy:"Only the entered content, category, language, app version and platform are sent. Contact information is optional. Feedback is visible only to the developer; your draft stays in this browser until submitted.",
+limits:"10–2000 characters. Contact: up to 120. At least 60 seconds between submissions, up to 5 per network address per hour.",
+category:"Category",bug:"Problem / bug",suggestion:"Suggestion",device:"Device / control compatibility",other:"Other",content:"Feedback content",contact:"Contact (optional)",submit:"Submit feedback",repository:"GitHub downloads ↗",
+loading:"Loading release information…",releaseError:"Release information is unavailable. Please use the GitHub version history.",lengthError:"Please enter 10–2000 characters; contact information must not exceed 120.",
+sending:"Submitting…",success:"Feedback submitted. Receipt: ",network:"Could not confirm submission. Your draft is saved; please retry.",rate:"Please wait {seconds} seconds before submitting again.",invalid:"Please check the content length and remove control characters.",unavailable:"The feedback service is temporarily unavailable. Your draft is saved.",
+notes:["App renamed to GetAmped Mobile Android Test; the Dragon Soul equipment icon is retained.","Feedback added to mode selection, training and room settings. Failed submissions keep the draft.","The download page now supports Simplified Chinese, Traditional Chinese, English, Japanese and Korean, with the same feedback service."]},
+"zh-CN":{
+test:"ANDROID · 开发测试",intro:"在安卓上自由选择职业与装备，本地练习招式，或进入联机房间一起测试。",
+download:"下载完整 APK",feedback:"问题反馈",jobs:"职业与装备",jobsText:"测试客户端内的职业、主装备与副装备均可选择使用，遵循原版职业与装备兼容规则。",
+offline:"本地单人模式",offlineText:"本地练习招式、尝试装备；离线练习不依赖联机服务器。",
+online:"联机测试房间",onlineText:"创建或加入房间进行联机对战，也可在服务器上单人练习。",
+updates:"App 内包体更新",updatesText:"启动时自动检查更新。支持的版本下载精确增量，重建并核验完整 APK，再由安卓系统确认覆盖安装。",
+server:"目前只有一个上海小型测试服",serverText:"目前仅有一个开发者自费运行的上海小服务器，用于开发和内测。容量有限，测试期间延迟和可用性可能变化。",
+compatibility:"当前为开发测试版。部分依赖鼠标输入的装备仍需触屏兼容验证；可选择装备不代表每个招式均已在安卓上验证。",
+current:"当前版本",changes:"本版更新",install:"安装与核验",installText:"需要 Android 8.0 或更高版本。首次安装请下载完整 APK，并允许浏览器安装应用。后续更新沿用同一签名并保留个人设置。",
+oldVersions:"没有内置更新器的老版本需下载完整 APK。",history:"历史版本 ↗",help:"一起完善测试版",
+feedbackText:"请描述发生了什么、如何复现，以及你期望的结果。也欢迎提出功能建议。",
+privacy:"仅上传填写的内容、类别、语言、App 和系统版本。联系方式选填，反馈仅开发者可见；提交前草稿保存在本浏览器。",
+limits:"正文 10–2000 字，联系方式最多 120 字。每次至少间隔 60 秒，每个网络地址每小时最多 5 条。",
+category:"反馈类别",bug:"问题 / Bug",suggestion:"功能建议",device:"设备 / 操作兼容",other:"其他",content:"反馈内容",contact:"联系方式（选填）",submit:"提交反馈",repository:"GitHub 下载仓库 ↗",
+loading:"正在读取版本信息…",releaseError:"暂时无法读取版本，请通过 GitHub 历史版本下载。",lengthError:"请填写 10–2000 字的正文，联系方式最多 120 字。",
+sending:"正在提交…",success:"反馈已提交，编号：",network:"网络连接失败，提交尚未确认。草稿已保留，可重试。",rate:"提交过于频繁，请在 {seconds} 秒后重试。",invalid:"请检查内容长度，避免输入控制字符。",unavailable:"反馈服务暂时不可用，草稿已保留，请稍后重试。",
+notes:["应用名称改为 GetAmped Mobile Android Test，继续使用龙魂装备图标。","模式选择、训练和房间设置增加问题反馈，提交失败保留草稿。","下载页支持简体中文、繁体中文、英语、日语和韩语，提供同一反馈服务。"]},
+"zh-TW":{
+test:"ANDROID · 開發測試",intro:"在安卓上自由選擇職業與裝備，本機練習招式，或進入連線房間一起測試。",
+download:"下載完整 APK",feedback:"問題回饋",jobs:"職業與裝備",jobsText:"測試用戶端內的職業、主裝備與副裝備均可選擇使用，遵循原版職業與裝備相容規則。",
+offline:"本機單人模式",offlineText:"在本機練習招式、嘗試裝備；離線練習不依賴連線伺服器。",
+online:"連線測試房間",onlineText:"建立或加入房間進行連線對戰，也可在伺服器上單人練習。",
+updates:"App 內安裝包更新",updatesText:"啟動時自動檢查更新。支援的版本下載精確增量，重建並驗證完整 APK，再由安卓系統確認覆蓋安裝。",
+server:"目前只有一個上海小型測試服",serverText:"目前僅有一個開發者自費運行的上海小型伺服器，用於開發與內測。容量有限，測試期間延遲與可用性可能變動。",
+compatibility:"目前為開發測試版。部分依賴滑鼠輸入的裝備仍需觸控相容性驗證；可選擇裝備不代表每個招式均已在安卓上驗證。",
+current:"目前版本",changes:"本版更新",install:"安裝與驗證",installText:"需要 Android 8.0 或更新版本。首次安裝請下載完整 APK，並允許瀏覽器安裝應用程式。後續更新沿用同一簽章並保留個人設定。",
+oldVersions:"沒有內建更新器的舊版需下載完整 APK。",history:"歷史版本 ↗",help:"一起完善測試版",
+feedbackText:"請描述發生了什麼、如何重現，以及你預期的結果。也歡迎提出功能建議。",
+privacy:"僅上傳填寫的內容、類別、語言、App 與系統版本。聯絡方式選填，回饋僅開發者可見；送出前草稿儲存在此瀏覽器。",
+limits:"正文 10–2000 字，聯絡方式最多 120 字。每次至少間隔 60 秒，每個網路位址每小時最多 5 則。",
+category:"回饋類別",bug:"問題 / Bug",suggestion:"功能建議",device:"裝置 / 操作相容性",other:"其他",content:"回饋內容",contact:"聯絡方式（選填）",submit:"送出回饋",repository:"GitHub 下載倉庫 ↗",
+loading:"正在讀取版本資訊…",releaseError:"暫時無法讀取版本，請透過 GitHub 歷史版本下載。",lengthError:"請填寫 10–2000 字的正文，聯絡方式最多 120 字。",
+sending:"正在送出…",success:"回饋已送出，編號：",network:"網路連線失敗，尚未確認送出。草稿已保留，可重試。",rate:"送出過於頻繁，請在 {seconds} 秒後重試。",invalid:"請檢查內容長度，避免輸入控制字元。",unavailable:"回饋服務暫時無法使用，草稿已保留，請稍後重試。",
+notes:["應用程式名稱改為 GetAmped Mobile Android Test，繼續使用龍魂裝備圖示。","模式選擇、訓練與房間設定新增問題回饋，送出失敗保留草稿。","下載頁支援簡體中文、繁體中文、英語、日語與韓語，提供同一回饋服務。"]},
+ja:{
+test:"ANDROID · 開発テスト",intro:"Android でスタイルとアクセサリを選び、オフライン練習やオンラインのテストルームで遊べます。",
+download:"APK をダウンロード",feedback:"フィードバック",jobs:"スタイルとアクセサリ",jobsText:"テストクライアントに含まれるすべてのスタイル、メイン・サブアクセサリを選択できます。元の装備適性ルールが適用されます。",
+offline:"ローカルの一人用モード",offlineText:"端末内で技や装備を試せます。オフライン練習にはオンラインサーバーへの接続は不要です。",
+online:"オンラインテストルーム",onlineText:"ルームを作成・参加して対戦したり、サーバー上で一人で練習したりできます。",
+updates:"アプリ内更新",updatesText:"起動時に更新を確認します。対応するバージョンでは差分を取得し、完全な APK を再構築・検証してから Android の確認で更新します。",
+server:"上海の小規模テストサーバー 1 台",serverText:"現在は開発者が自費で運営する上海の小規模サーバー 1 台のみです。開発・テスト用のため、容量、遅延、稼働状況には制限があります。",
+compatibility:"開発テスト版です。マウス入力が必要な一部の装備はタッチ操作の検証が必要です。選択可能でも、すべての技を Android で検証済みとは限りません。",
+current:"現在のバージョン",changes:"更新内容",install:"インストールと検証",installText:"Android 8.0 以降が必要です。初回は完全な APK をダウンロードし、ブラウザーからのインストールを許可してください。更新では署名と個人設定を維持します。",
+oldVersions:"更新機能のない旧版には完全な APK が必要です。",history:"過去のバージョン ↗",help:"テスト版の改善にご協力ください",
+feedbackText:"発生した問題、再現手順、期待した結果をお知らせください。機能の提案も歓迎します。",
+privacy:"入力内容、分類、言語、アプリと OS のバージョンのみ送信します。連絡先は任意です。内容は開発者のみ閲覧でき、送信前の下書きはこのブラウザーに保存されます。",
+limits:"本文 10〜2000 文字、連絡先は 120 文字以内。送信間隔は最低 60 秒、ネットワークアドレスごとに 1 時間 5 件まで。",
+category:"分類",bug:"問題 / バグ",suggestion:"機能の提案",device:"端末 / 操作の互換性",other:"その他",content:"内容",contact:"連絡先（任意）",submit:"送信する",repository:"GitHub ダウンロード ↗",
+loading:"バージョン情報を読み込み中…",releaseError:"情報を取得できません。GitHub の過去のバージョンをご利用ください。",lengthError:"本文は 10〜2000 文字、連絡先は 120 文字以内で入力してください。",
+sending:"送信中…",success:"送信しました。受付番号：",network:"送信を確認できません。下書きは保存されています。再試行してください。",rate:"{seconds} 秒後に再試行してください。",invalid:"文字数と制御文字を確認してください。",unavailable:"サービスを利用できません。下書きは保存されています。後で再試行してください。",
+notes:["アプリ名を GetAmped Mobile Android Test に変更。龍魂装備のアイコンを維持します。","モード選択、練習、ルームの設定にフィードバックを追加。失敗時は下書きを保持します。","ダウンロードページが簡体字・繁体字中国語、英語、日本語、韓国語に対応しました。"]},
+ko:{
+test:"ANDROID · 개발 테스트",intro:"Android에서 직업과 액세서리를 선택하고, 오프라인 연습이나 온라인 테스트 방에서 플레이하세요.",
+download:"APK 다운로드",feedback:"문제 제보",jobs:"직업과 액세서리",jobsText:"테스트 클라이언트에 포함된 모든 직업, 주 장비와 보조 장비를 선택할 수 있습니다. 원작의 직업별 장착 규칙이 적용됩니다.",
+offline:"로컬 싱글 플레이",offlineText:"기기에서 기술과 장비를 연습하세요. 오프라인 연습에는 온라인 서버 연결이 필요하지 않습니다.",
+online:"온라인 테스트 방",onlineText:"방을 만들거나 참여해 대전하거나, 서버에서 혼자 연습할 수 있습니다.",
+updates:"앱 내 업데이트",updatesText:"앱 실행 시 업데이트를 확인합니다. 지원 버전은 정확한 차분을 받아 전체 APK를 재구성하고 검증한 후 Android의 확인을 거쳐 설치합니다.",
+server:"상하이의 소규모 테스트 서버 1대",serverText:"현재 개발자가 자비로 운영하는 상하이의 소규모 개발·테스트 서버 1대만 있습니다. 용량이 제한되며 테스트 중 지연과 가용성이 달라질 수 있습니다.",
+compatibility:"개발 테스트 버전입니다. 마우스 입력이 필요한 일부 장비는 터치 호환성 검증이 필요합니다. 선택 가능하다고 모든 기술의 Android 검증이 완료된 것은 아닙니다.",
+current:"현재 버전",changes:"업데이트 내용",install:"설치 및 검증",installText:"Android 8.0 이상이 필요합니다. 처음에는 전체 APK를 다운로드하고 브라우저에서 앱 설치를 허용하세요. 업데이트는 동일한 서명과 개인 설정을 유지합니다.",
+oldVersions:"업데이터가 없는 이전 버전은 전체 APK가 필요합니다.",history:"버전 기록 ↗",help:"테스트 버전 개선에 참여하세요",
+feedbackText:"발생한 문제, 재현 방법, 기대했던 결과를 알려 주세요. 기능 제안도 환영합니다.",
+privacy:"입력 내용, 분류, 언어, 앱과 시스템 버전만 전송합니다. 연락처는 선택 사항입니다. 개발자만 제보를 볼 수 있으며 전송 전 초안은 이 브라우저에 저장됩니다.",
+limits:"본문 10~2000자, 연락처 최대 120자. 전송 간격은 최소 60초이며 네트워크 주소별 시간당 최대 5건입니다.",
+category:"분류",bug:"문제 / 버그",suggestion:"기능 제안",device:"기기 / 조작 호환성",other:"기타",content:"제보 내용",contact:"연락처 (선택)",submit:"제보 전송",repository:"GitHub 다운로드 ↗",
+loading:"버전 정보를 불러오는 중…",releaseError:"버전 정보를 불러올 수 없습니다. GitHub 버전 기록을 이용하세요.",lengthError:"본문은 10~2000자, 연락처는 120자 이내로 입력하세요.",
+sending:"전송 중…",success:"전송 완료. 접수 번호: ",network:"전송을 확인하지 못했습니다. 초안이 저장되어 있으니 다시 시도하세요.",rate:"{seconds}초 후 다시 시도하세요.",invalid:"글자 수와 제어 문자를 확인하세요.",unavailable:"제보 서비스를 이용할 수 없습니다. 초안이 저장되어 있으니 나중에 다시 시도하세요.",
+notes:["앱 이름을 GetAmped Mobile Android Test로 변경하고 용혼 장비 아이콘을 유지했습니다.","모드 선택, 연습, 방 설정에 문제 제보를 추가했습니다. 실패 시 초안을 유지합니다.","다운로드 페이지가 중국어 간체·번체, 영어, 일본어, 한국어를 지원합니다."]}
+};
+const $=id=>document.getElementById(id);
+function read(key,fallback){try{return JSON.parse(localStorage.getItem(key))??fallback}catch{return fallback}}
+function save(key,value){try{localStorage.setItem(key,JSON.stringify(value))}catch{}}
+function guess(){for(const language of navigator.languages||[navigator.language]){
+ const value=language.toLowerCase();if(value.startsWith("zh"))return /tw|hk|hant|mo/.test(value)?"zh-TW":"zh-CN";
+ for(const lang of ["en","ja","ko"])if(value.startsWith(lang))return lang}return "en"}
+let language=read("ga-language",guess());if(!words[language])language="en";
+let release=null,posting=false,lastStatus=null;
+const draft=read("ga-feedback-draft",{});$("message").value=typeof draft.message==="string"?draft.message:"";
+$("contact").value=typeof draft.contact==="string"?draft.contact:"";if(["bug","suggestion","compatibility","other"].includes(draft.category))$("category").value=draft.category;
+function t(key){return words[language][key]||words.en[key]||key}
+function status(key,detail="",error=false){lastStatus={key,detail,error};$("feedbackStatus").textContent=t(key).replace("{seconds}",detail)+(key==="success"?detail:"");$("feedbackStatus").className=error?"error":"success"}
+function renderRelease(){
+ $("releaseLine").textContent=release?`v${release.versionName} · ${(release.bytes/1048576).toFixed(1)} MiB · Android 8.0+`:t("loading");
+ $("releaseTitle").textContent=release?`v${release.versionName}`:"—";
+ $("download").setAttribute("aria-disabled",!release);
+ if(!release)return;
+ $("download").href=release.url;$("hash").textContent=release.sha256;
+ $("releaseLink").href=`https://github.com/zuoqin123222/GetAmped-Android-Downloads/releases/tag/v${release.versionName}`;
+ $("changes").replaceChildren();
+ const notes=release.translations?.[language]||((release.versionName==="0.36")?t("notes"):release.changes.split("\n").filter(Boolean));
+ for(const note of notes){const li=document.createElement("li");li.textContent=note;$("changes").append(li)}
+}
+function setLanguage(value){language=value;save("ga-language",language);document.documentElement.lang=language;$("language").value=language;
+ document.querySelectorAll("[data-i18n]").forEach(element=>element.textContent=t(element.dataset.i18n));
+ renderRelease();if(lastStatus)status(lastStatus.key,lastStatus.detail,lastStatus.error)}
+$("language").onchange=event=>setLanguage(event.target.value);
+function keepDraft(){
+ for(const [id,max] of [["message",2000],["contact",120]]){const field=$(id);if([...field.value].length>max)field.value=[...field.value].slice(0,max).join("")}
+ $("counter").textContent=`${[...$("message").value].length} / 2000`;
+ save("ga-feedback-draft",{message:$("message").value,contact:$("contact").value,category:$("category").value});
+}
+for(const id of ["message","contact","category"])$(id).addEventListener("input",keepDraft);
+$("feedbackForm").addEventListener("submit",async event=>{
+ event.preventDefault();if(posting)return;
+ const message=$("message").value.trim(),contact=$("contact").value.trim();
+ if([...message].length<10||[...message].length>2000||[...contact].length>120){status("lengthError","",true);$("message").focus();return}
+ const payload={message,contact,category:$("category").value,source:"website",locale:language,appVersion:release?.versionName||"unknown",platform:"Web browser",website:$("website").value};
+ const signature=JSON.stringify(payload),previous=read("ga-feedback-request",{});
+ const requestId=previous.signature===signature&&typeof previous.requestId==="string"?previous.requestId:crypto.randomUUID();
+ save("ga-feedback-request",{signature,requestId});payload.requestId=requestId;
+ posting=true;for(const id of ["submit","message","contact","category","language"])$(id).disabled=true;status("sending");
+ const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),15000);
+ try{
+  const response=await fetch("https://47.117.73.22/feedback/v1",{method:"POST",headers:{"Content-Type":"application/json"},
+   body:JSON.stringify(payload),credentials:"omit",redirect:"error",signal:controller.signal});
+  const data=await response.json();
+  if(response.ok&&data.ok&&/^[0-9a-f-]{36}$/.test(data.feedbackId)){
+   $("message").value="";$("contact").value="";keepDraft();save("ga-feedback-request",{});status("success",data.feedbackId);
+  }else if(response.status===429)status("rate",String(Math.max(1,data.retryAfter||60)),true);
+  else if([400,413,415].includes(response.status))status("invalid","",true);
+  else status("unavailable","",true);
+ }catch{status("network","",true)}
+ finally{clearTimeout(timer);posting=false;for(const id of ["submit","message","contact","category","language"])$(id).disabled=false}
+});
+keepDraft();setLanguage(language);
+fetch("./release.json",{cache:"no-cache"}).then(response=>{if(!response.ok)throw Error("release");return response.json()}).then(data=>{
+ if(!/^\d+(?:\.\d+)+$/.test(data.versionName)||!/^[a-f0-9]{64}$/.test(data.sha256)||!Number.isSafeInteger(data.bytes)||data.bytes<1||
+    data.url!==`https://47.117.73.22/android/releases/OriginalTraining-v${data.versionName}.apk`)throw Error("release identity");
+ release=data;renderRelease();
+}).catch(()=>{$("releaseLine").textContent=t("releaseError")});
