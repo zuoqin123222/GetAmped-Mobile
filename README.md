@@ -2,7 +2,7 @@
 
 [🌐 多语言下载页 / Multilingual downloads / ダウンロード / 다운로드](https://zuoqin123222.github.io/GetAmped-Mobile/)
 
-[Download latest Android APK · v0.39](https://github.com/zuoqin123222/GetAmped-Mobile/releases/download/v0.39/GetAmped-Mobile-Android-v0.39.apk) · Android 8.0+
+[Download latest Android APK · v0.40](https://github.com/zuoqin123222/GetAmped-Mobile/releases/download/v0.40/GetAmped-Mobile-Android-v0.40.apk) · Android 8.0+
 
 **Android: available · iOS: not yet available**
 
@@ -62,10 +62,10 @@ Only the current Android version is listed for download. Some mouse-dependent eq
 
 마우스 입력이 필요한 일부 장비는 터치 호환성 검증이 필요하며 모든 기술의 Android 검증 완료를 의미하지 않습니다.
 
-## v0.39
+## v0.40
 
-修正水平进度框排队文字显示；小增量显示排队中几/几，轮到后自动下载，可取消；完整包或预计超过五分钟更新转至 GitHub；每次发布核验 GitHub 完整 APK 并移除旧公开下载链接；保留签名、设置和断点续传。
+新增独立滑移八向：相邻方向与小中心区双击确认跑步，首次按下决定起跑方向；走跑按住拖动转向，可调并保存死区和独立布局。保留旧八向与默认摇杆。
 
-APK: 919,020,734 bytes
+APK: 919,024,830 bytes
 
-SHA-256: `eac9f403cfa1d5cd47c150eefeaf93028c329410ca09ed6061a8b7a4544cde23`
+SHA-256: `baac277ef76d08ed5fbf46cce407228a5013dba64af0b2b99122b17070576050`
