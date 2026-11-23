@@ -115,7 +115,7 @@ function renderRelease(){
  $("download").href=release.url;$("hash").textContent=release.sha256;
  $("releaseLink").href=`https://github.com/zuoqin123222/GetAmped-Mobile/releases/tag/v${release.versionName}`;
  $("changes").replaceChildren();
- const notes=release.translations?.[language]||((release.versionName==="0.38")?updateNotes38[language]:((release.versionName==="0.37")?t("notes"):release.changes.split("\n").filter(Boolean)));
+ const notes=release.translations?.[language]||((["0.38","0.39"].includes(release.versionName))?updateNotes38[language]:((release.versionName==="0.37")?t("notes"):release.changes.split("\n").filter(Boolean)));
  for(const note of notes){const li=document.createElement("li");li.textContent=note;$("changes").append(li)}
 }
 function setLanguage(value,persist=false){language=value;if(persist)save("ga-language-choice",language);document.documentElement.lang=language;$("language").value=language;
