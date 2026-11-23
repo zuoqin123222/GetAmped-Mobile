@@ -99,6 +99,13 @@ words["zh-TW"].updatesText="啟動時檢查更新。小增量顯示排隊位置�
 words.ja.updatesText="起動時に更新を確認します。小さな差分は待ち順を表示し、完全 APK を再構築・検証します。完全 APK と推定 5 分を超えるダウンロードは GitHub を使用します。";
 words.ko.updatesText="실행 시 업데이트를 확인합니다. 작은 차분은 대기 순서를 표시하고 전체 APK를 재구성·검증합니다. 전체 APK와 예상 5분을 넘는 다운로드는 GitHub를 사용합니다.";
 const $=id=>document.getElementById(id);
+for(const [locale,message] of Object.entries({
+ en:"Full APK preparing. Supported installed versions can update in the app. Please check back shortly.",
+ "zh-CN":"完整 APK 准备中，匹配的旧版可先在 App 内更新。请稍后刷新此页。",
+ "zh-TW":"完整 APK 準備中，支援的舊版可先在 App 內更新。請稍後重新整理。",
+ ja:"完全 APK を準備中です。対応するインストール済み版はアプリ内で更新できます。",
+ ko:"전체 APK 준비 중입니다. 지원되는 설치 버전은 앱에서 먼저 업데이트할 수 있습니다."
+}))words[locale].preparing=message;
 function read(key,fallback){try{return JSON.parse(localStorage.getItem(key))??fallback}catch{return fallback}}
 function save(key,value){try{localStorage.setItem(key,JSON.stringify(value))}catch{}}
 let language=read("ga-language-choice","en");if(!words[language])language="en";
@@ -110,10 +117,16 @@ function status(key,detail="",error=false){lastStatus={key,detail,error};$("feed
 function renderRelease(){
  $("releaseLine").textContent=release?`v${release.versionName} · ${(release.bytes/1048576).toFixed(1)} MiB · Android 8.0+`:t("loading");
  $("releaseTitle").textContent=release?`v${release.versionName}`:"—";
- $("download").setAttribute("aria-disabled",!release);
+ const ready=release&&release.status!=="preparing";
+ $("download").setAttribute("aria-disabled",String(!ready));
+ $("download").removeAttribute("href");
+ $("releaseLink").removeAttribute("href");
  if(!release)return;
- $("download").href=release.url;$("hash").textContent=release.sha256;
- $("releaseLink").href=`https://github.com/zuoqin123222/GetAmped-Mobile/releases/tag/v${release.versionName}`;
+ if(ready){
+  $("download").href=release.url;
+  $("releaseLink").href=`https://github.com/zuoqin123222/GetAmped-Mobile/releases/tag/v${release.versionName}`;
+ }else{$("releaseLine").textContent=`v${release.versionName} · ${t("preparing")}`;$("download").textContent=t("preparing")}
+ $("hash").textContent=release.sha256;
  $("changes").replaceChildren();
  const notes=release.translations?.[language]||((["0.38","0.39"].includes(release.versionName))?updateNotes38[language]:((release.versionName==="0.37")?t("notes"):release.changes.split("\n").filter(Boolean)));
  for(const note of notes){const li=document.createElement("li");li.textContent=note;$("changes").append(li)}
@@ -153,6 +166,6 @@ $("feedbackForm").addEventListener("submit",async event=>{
 keepDraft();setLanguage(language);
 fetch("./release.json",{cache:"no-cache"}).then(response=>{if(!response.ok)throw Error("release");return response.json()}).then(data=>{
  if(!/^\d+(?:\.\d+)+$/.test(data.versionName)||!/^[a-f0-9]{64}$/.test(data.sha256)||!Number.isSafeInteger(data.bytes)||data.bytes<1||
-    data.url!==`https://47.117.73.22/android/releases/OriginalTraining-v${data.versionName}.apk`)throw Error("release identity");
+    !(data.status==="preparing"?data.url==="":data.url===`https://github.com/zuoqin123222/GetAmped-Mobile/releases/download/v${data.versionName}/GetAmped-Mobile-Android-v${data.versionName}.apk`))throw Error("release identity");
  release=data;renderRelease();
 }).catch(()=>{$("releaseLine").textContent=t("releaseError")});
