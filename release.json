@@ -1,8 +1,8 @@
 {
-  "versionName": "0.36",
-  "versionCode": 40,
+  "versionName": "0.37",
+  "versionCode": 41,
   "bytes": 919020734,
-  "sha256": "afd1f75bc1aeaab69c354af4a9867d8bc1b06592b24d0619ab7d4bb8e4199776",
-  "url": "https://47.117.73.22/android/releases/OriginalTraining-v0.36.apk",
-  "changes": "应用名称改为 GetAmped Mobile Android Test；模式页、联机房间和游戏设置新增问题反馈，支持草稿保留、HTTPS 提交和反馈编号；GitHub 下载页支持简体中文、繁体中文、英语、日语、韩语，补充职业装备、本地单人、联机、上海自费测试服务器及包体更新说明。"
+  "sha256": "f0d84719154c93fffa5368d6f9b116a25a3a966dcaa1445cbcf63e72832124d5",
+  "url": "https://47.117.73.22/android/releases/OriginalTraining-v0.37.apk",
+  "changes": "名称统一为 GetAmped Mobile，下载页默认英文并只保留最新版；反馈正文限制为 10–800 字，全站滚动 24 小时最多接收 10 条，网页与 App 共用额度；说明 Android 版现已提供、iOS 版暂无；龙魂图标四周增加同色灰色背景，保留原像素并适配圆形和圆角图标。"
 }
