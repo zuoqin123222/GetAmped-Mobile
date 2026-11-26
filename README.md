@@ -2,7 +2,7 @@
 
 [🌐 多语言下载页 / Multilingual downloads / ダウンロード / 다운로드](https://zuoqin123222.github.io/GetAmped-Mobile/)
 
-Android v0.41: full APK preparing. Supported installed clients can update in the app. / 完整包准备中，匹配的旧版可在 App 内更新。
+[Download latest Android APK · v0.41](https://github.com/zuoqin123222/GetAmped-Mobile/releases/download/v0.41/GetAmped-Mobile-Android-v0.41.apk) · Android 8.0+
 
 **Android: available · iOS: not yet available**
 
