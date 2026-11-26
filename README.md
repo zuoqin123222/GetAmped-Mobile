@@ -2,7 +2,7 @@
 
 [🌐 多语言下载页 / Multilingual downloads / ダウンロード / 다운로드](https://zuoqin123222.github.io/GetAmped-Mobile/)
 
-[Download latest Android APK · v0.40](https://github.com/zuoqin123222/GetAmped-Mobile/releases/download/v0.40/GetAmped-Mobile-Android-v0.40.apk) · Android 8.0+
+Android v0.41: full APK preparing. Supported installed clients can update in the app. / 完整包准备中，匹配的旧版可在 App 内更新。
 
 **Android: available · iOS: not yet available**
 
@@ -62,10 +62,11 @@ Only the current Android version is listed for download. Some mouse-dependent eq
 
 마우스 입력이 필요한 일부 장비는 터치 호환성 검증이 필요하며 모든 기술의 Android 검증 완료를 의미하지 않습니다.
 
-## v0.40
+## v0.41
 
-新增独立滑移八向：相邻方向与小中心区双击确认跑步，首次按下决定起跑方向；走跑按住拖动转向，可调并保存死区和独立布局。保留旧八向与默认摇杆。
+修订装备说明：移除由动画和脚本函数机械推导的“持续攻击物、召唤物或投射物、多段命中、带有位移”等误导文案。保留原官方具体招式；缺少可靠资料的装备明确标记待核对并保留原装备介绍，不再把表演或判定流程当成招式内容。黑色法杖仅保留已核对的具体招式，其他派生保留缺口标记。
+建立统一移动版本身份：装备说明、默认操作配置与实际原规则/资源进入双端构建核对。发布工具支持最近旧包增量可用后自动启动 Mac 固定构建流程；iOS 实际更新以 Mac 完成适配、构建、验证和签名分发为准。原战斗规则、香水独立残量及现有正式操作设置保留。
 
-APK: 919,024,830 bytes
+APK: 918,938,894 bytes
 
-SHA-256: `baac277ef76d08ed5fbf46cce407228a5013dba64af0b2b99122b17070576050`
+SHA-256: `409847277cbc8cf6befe7734971e8326606459c58526afa5b56db10f5145466a`
